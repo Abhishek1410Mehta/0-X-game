@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         {
             for(j in 0..2)
             {
-                boardStatus[0][0]=-1;
+                boardStatus[i][j]=-1;
             }
         }
         for(i in board)
@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // horizontal row
         for(i in 0..2)
         {
-            if(boardStatus[i][0]== boardStatus[i][1] && boardStatus[i][1]==boardStatus[i][2]){
+            if(boardStatus[i][0]== boardStatus[i][1] && boardStatus[i][0]==boardStatus[i][2]){
                 if(boardStatus[i][0]==1){
                     updateDisplay("PLAYER X IS WINNER")
                     break}else if(boardStatus[i][0]==0){
@@ -154,7 +154,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     displayTv.text=text
         if(text.contains("WINNER"))
         {
-            displayTv.setText(text)
+            disableButton()
         }
     }
 
